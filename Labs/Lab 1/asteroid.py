@@ -25,7 +25,7 @@ class Asteroid:
         self.__str__()
 
     def randCcmf(self):
-        rad = random.randint(1, 4)
+        rad = random.randint(0, 4000)/1000
         ccmf = (2*math.pi*rad)
         return ccmf
 
