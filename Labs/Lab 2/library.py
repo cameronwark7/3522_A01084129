@@ -5,8 +5,6 @@ from Catalogue import Catalogue
 from LibraryItemGenerator import LibraryItemGenerator
 from book import Book
 
-# fix back, print, and test the rest of the main menu options.
-# check if i need to generate a new item list
 class Library:
     """
     The Library consists of a list of books and provides an
