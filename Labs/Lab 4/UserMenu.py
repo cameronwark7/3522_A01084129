@@ -11,8 +11,17 @@ class UserMenu:
         print("2. Record a Transaction")
         print("3. View Transactions by Budget")
         print("4. View Bank Account Details")
-        val = input("Select 1-4")
-        val = int(val)
+        val = input("Select 1-4: ")
 
-        if val == 2:
+        if val == "1":
+            pass
+        elif val == "2":
             self._record_menu.choice_display()
+        elif val == "3":
+            pass
+        elif val == "4":
+            pass
+        else:
+            print("INVALID INPUT")
+            print("---------------------------")
+        self.display()

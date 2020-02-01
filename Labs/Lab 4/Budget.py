@@ -28,7 +28,7 @@ class Budget:
         self._transactions.append(transaction)
 
         print("TRANSACTION RECORDED")
-        print(transaction[0] + " | " + str(transaction[1]) + " | "
+        print(transaction[0] + " | $" + str(transaction[1]) + " | "
               + transaction[2] + " | " + transaction[3])
         print("--------------------")
 

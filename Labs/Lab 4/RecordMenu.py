@@ -4,28 +4,35 @@ class RecordMenu:
         self._budget = budget
 
     def choice_display(self):
+        print("--------------------")
         print("What type of transaction?")
         print("1. Games and Entertainment")
         print("2. Clothing and Accessories")
         print("3. Eating Out")
         print("4. Miscellaneous")
-        val = input("Choose 1 - 4: ")
-        choice = int(val)
-        price = self.get_price()
+        print("5. Back")
+        choice = input("Choose 1 - 5: ")
         repeat = None
 
-        if choice == 1:
+        if choice == "1":
+            price = self.get_price()
             self._budget.entertainment_record(price)
             repeat = self.success()
-        elif choice == 2:
+        elif choice == "2":
+            price = self.get_price()
             self._budget.clothing_record(price)
             repeat = self.success()
-        elif choice == 3:
+        elif choice == "3":
+            price = self.get_price()
             self._budget.food_record(price)
             repeat = self.success()
-        elif choice == 4:
+        elif choice == "4":
+            price = self.get_price()
             self._budget.misc_record(price)
             repeat = self.success()
+        elif choice == "5":
+            print("---------------------------")
+            return
         else:
             print("Please enter a valid number: ")
             print("---------------------------")
