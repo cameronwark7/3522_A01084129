@@ -1,6 +1,10 @@
 from User import User
 from Budget import Budget
 from UserMenu import UserMenu
+from Angel import Angel
+from Troublemaker import Troublemaker
+from Rebel import Rebel
+
 
 class UserInit:
     def __init__(self):
@@ -26,12 +30,33 @@ class UserInit:
     def create_user(self):
         name = input("Enter user's name: ")
         age = input("Enter user age: ")
-        type = input("Enter user type: ")
         bank_num = input("Enter bank account number: ")
         bank_name = input("Enter bank name: ")
         bank_bal = input("Enter bank balance: ")
+        type = self.get_type()
+        if type == "1":
+            return Angel(name, age, bank_num, bank_name, bank_bal)
+        elif type == "2":
+            return Troublemaker(name, age, bank_num, bank_name, bank_bal)
+        elif type == "3":
+            return Rebel(name, age, bank_num, bank_name, bank_bal)
 
-        return User(name, age, type, bank_num, bank_name, bank_bal)
+    def get_type(self):
+        print("1. Angel")
+        print("2. Troublemaker")
+        print("3. Rebel")
+        val = input("Select 1-3: ")
+
+        if val == "1":
+            return "1"
+        elif val == "2":
+            return "2"
+        elif val == "3":
+            return "3"
+        else:
+            print("INVALID INPUT")
+            print("---------------------------")
+        self.get_type()
 
     def create_budget(self):
         entertainment = input("Enter budget for games and entertainment: ")
@@ -39,14 +64,14 @@ class UserInit:
         food = input("Enter budget for eating out: ")
         misc = input("Enter budget for miscellaneous needs: ")
 
-        return Budget(entertainment, clothing, food, misc)
+        return Budget(self._user, entertainment, clothing, food, misc)
 
     def load_test_user(self):
-        user = User("John", 17, "Angel", 41, "Vancity", 200.00)
+        user = Rebel("John", 17, 41, "Vancity", 700.00)
         return user
 
     def load_test_budget(self):
-        budget = Budget(50, 100, 200, 150)
+        budget = Budget(self._user, 50, 100, 200, 150)
         return budget
 
 def main():
