@@ -1,6 +1,7 @@
 from datetime import datetime
 from Rebel import Rebel
 
+
 class Budget:
     def __init__(self, user, entertainment, clothing, food, misc):
         self._user = user
@@ -17,6 +18,18 @@ class Budget:
         self._food_lock = False
         self._misc_lock = False
         self._transactions = []
+
+    def get_food_lock(self):
+        return self._food_lock
+
+    def get_entertainment_lock(self):
+        return self._entertainment_lock
+
+    def get_clothing_lock(self):
+        return self._clothing_lock
+
+    def get_misc_lock(self):
+        return self._misc_lock
 
     def return_transactions(self, t_type):
         if t_type == "entertainment":
@@ -68,11 +81,13 @@ class Budget:
         print("--------------------")
 
     def entertainment_record(self, price):
-        self._full_lockout()
+        result = False
+        result = self._full_lockout()
         if (self._entertainment_lock == False):
             self.general_record(price, "Entertainment")
         else:
-            print("Locked out of this budget category")
+            if result == False:
+                print("Locked out of this budget category")
 
         lock_result = self._user.lock_set(self._entertainment_lock, "e", self._entertainment)
         self._entertainment_lock = lock_result
@@ -81,11 +96,13 @@ class Budget:
                           self._entertainment, self._clothing, self._food, self._misc)
 
     def clothing_record(self, price):
-        self._full_lockout()
+        result = False
+        result = self._full_lockout()
         if (self._clothing_lock == False):
             self.general_record(price, "Clothing")
         else:
-            print("Locked out of this budget category")
+            if result == False:
+                print("Locked out of this budget category")
 
         lock_result = self._user.lock_set(self._clothing_lock, "c", self._clothing)
         self._clothing_lock = lock_result
@@ -94,11 +111,13 @@ class Budget:
                           self._entertainment, self._clothing, self._food, self._misc)
 
     def food_record(self, price):
-        self._full_lockout()
+        result = False
+        result = self._full_lockout()
         if (self._food_lock == False):
             self.general_record(price, "Food")
         else:
-            print("Locked out of this budget category")
+            if result == False:
+                print("Locked out of this budget category")
 
         lock_result = self._user.lock_set(self._food_lock, "f", self._food)
         self._food_lock = lock_result
