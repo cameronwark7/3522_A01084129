@@ -67,7 +67,7 @@ class UserInit:
         return Budget(self._user, entertainment, clothing, food, misc)
 
     def load_test_user(self):
-        user = Rebel("John", 17, 41, "Vancity", 700.00)
+        user = Angel("John", 17, 41, "Vancity", 700.00)
         return user
 
     def load_test_budget(self):
