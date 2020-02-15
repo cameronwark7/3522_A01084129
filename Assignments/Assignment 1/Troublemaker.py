@@ -12,15 +12,23 @@ class Troublemaker(User):
             if (type == "e"):
                 if (self._initial_e - (self._initial_e * 1.2) > status):
                     return True
+                else:
+                    return False
             elif (type == "c"):
                 if (self._initial_c - (self._initial_c * 1.2) > status):
                     return True
+                else:
+                    return False
             elif (type == "f"):
                 if (self._initial_f - (self._initial_f * 1.2) > status):
                     return True
+                else:
+                    return False
             elif (type == "m"):
                 if (self._initial_m - (self._initial_m * 1.2) > status):
                     return True
+                else:
+                    return False
             else:
                 return False
 

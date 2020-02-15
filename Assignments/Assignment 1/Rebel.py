@@ -12,15 +12,23 @@ class Rebel(User):
             if (type == "e"):
                 if (0 > status):
                     return True
+                else:
+                    return False
             elif (type == "c"):
                 if (0 > status):
                     return True
+                else:
+                    return False
             elif (type == "f"):
                 if (0 > status):
                     return True
+                else:
+                    return False
             elif (type == "m"):
                 if (0 > status):
                     return True
+                else:
+                    return False
             else:
                 return False
 
@@ -31,13 +39,13 @@ class Rebel(User):
             print("WARNING: Less than 50% of Entertainment Budget Left")
         if (clothing < 0):
             print("WARNING: Clothing Budget Exceeded; LOCKED OUT")
-        elif ((clothing * 0.5) < (self._initial_c - clothing)):
+        elif ((self._initial_c * 0.5) > (clothing)):
             print("WARNING: Less than 50% of Clothing Budget Left")
         if (food < 0):
             print("WARNING: Food Budget Exceeded; LOCKED OUT")
-        elif ((food * 0.5) < (self._initial_f - food)):
+        elif ((self._initial_f * 0.5) > (food)):
             print("WARNING: Less than 50% of Food Budget Left")
         if (misc < 0):
             print("WARNING: Misc Budget Exceeded; LOCKED OUT")
-        elif ((misc * 0.5) < (self._initial_m - misc)):
+        elif ((self._initial_m * 0.5) > (misc)):
             print("WARNING: Less than 50% of Misc Budget Left")
