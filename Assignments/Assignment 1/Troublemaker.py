@@ -33,4 +33,19 @@ class Troublemaker(User):
                 return False
 
     def notify(self, price, e_lock, c_lock, f_lock, m_lock, entertainment, clothing, food, misc):
-        pass
+        if (entertainment < (0 - self._initial_e * 0.25)):
+            print("WARNING: Entertainment Budget Exceeded; LOCKED OUT")
+        elif ((self._initial_e * 0.75) > (entertainment)):
+            print("WARNING: Less than 25% of Misc Budget Left")
+        if (clothing < (0 - self._initial_c * 0.25)):
+            print("WARNING: Clothing Budget Exceeded; LOCKED OUT")
+        elif ((self._initial_c * 0.75) > (clothing)):
+            print("WARNING: Less than 25% of Misc Budget Left")
+        if (food < (0 - self._initial_f * 0.25)):
+            print("WARNING: Food Budget Exceeded; LOCKED OUT")
+        elif ((self._initial_f * 0.75) > (food)):
+            print("WARNING: Less than 25% of Misc Budget Left")
+        if (misc < (0 - self._initial_m * 0.25)):
+            print("WARNING: Misc Budget Exceeded; LOCKED OUT")
+        elif ((self._initial_m * 0.75) > (misc)):
+            print("WARNING: Less than 25% of Misc Budget Left")
