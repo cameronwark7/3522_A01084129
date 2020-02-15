@@ -61,12 +61,16 @@ class Budget:
 
         if type == "Entertainment":
             self._entertainment -= price
+            self._user.bank_bal -= price
         elif type == "Clothing":
             self._clothing -= price
+            self._user.bank_bal -= price
         elif type == "Food":
             self._food -= price
+            self._user.bank_bal -= price
         elif type == "Misc":
             self._misc -= price
+            self._user.bank_bal -= price
 
         store = input("Where did this purchase take place? ")
         now = datetime.now()

@@ -48,6 +48,13 @@ class UserMenu:
         print("Total amount allocated: " + str(self._user._initial_m))
         print("")
 
+    def view_acc_details(self):
+        print("---------------------------")
+        print("Bank Account Number: " + str(self._user.get_bank_num()))
+        print("Bank Account Name: " + self._user.get_bank_name())
+        print("Balance: $" + str(self._user.get_bank_bal()))
+        print("---------------------------")
+
     def display(self):
         print("1. View Budgets")
         print("2. Record a Transaction")
@@ -63,7 +70,7 @@ class UserMenu:
         elif val == "3":
             self._view_transactions_menu.choice_display()
         elif val == "4":
-            pass
+            self.view_acc_details()
         else:
             print("INVALID INPUT")
             print("---------------------------")
