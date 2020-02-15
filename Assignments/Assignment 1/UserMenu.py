@@ -52,7 +52,9 @@ class UserMenu:
         print("---------------------------")
         print("Bank Account Number: " + str(self._user.get_bank_num()))
         print("Bank Account Name: " + self._user.get_bank_name())
-        print("Balance: $" + str(self._user.get_bank_bal()))
+        self._budget.print_all_transactions()
+
+        print("Closing Balance: $" + str(self._user.get_bank_bal()))
         print("---------------------------")
 
     def display(self):

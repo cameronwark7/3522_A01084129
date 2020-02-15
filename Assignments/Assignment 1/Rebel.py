@@ -27,7 +27,7 @@ class Rebel(User):
     def notify(self, price, e_lock, c_lock, f_lock, m_lock, entertainment, clothing, food, misc):
         if (entertainment < 0):
             print("WARNING: Entertainment Budget Exceeded; LOCKED OUT")
-        elif ((entertainment * 0.5) < (self._initial_e - entertainment)):
+        elif ((self._initial_e * 0.5) > (entertainment)):
             print("WARNING: Less than 50% of Entertainment Budget Left")
         if (clothing < 0):
             print("WARNING: Clothing Budget Exceeded; LOCKED OUT")

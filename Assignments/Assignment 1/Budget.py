@@ -31,6 +31,11 @@ class Budget:
     def get_misc_lock(self):
         return self._misc_lock
 
+    def print_all_transactions(self):
+        for x in self._transactions:
+            print(x[0] + " | $" + str(x[1]) + " | "
+                    + x[2] + " | " + x[3])
+
     def return_transactions(self, t_type):
         if t_type == "entertainment":
             for x in self._transactions:
