@@ -1,3 +1,4 @@
+
 """
 This module is responsible for holding a badly written (but not so bad
 that you won't find this in the workplace) BookAnalyzer class that needs
@@ -13,7 +14,7 @@ class BookAnalyzer:
     """
 
     # a constant to help filter out common punctuation.
-    COMMON_PUNCTUATION = [",", "*", ";", ".", ":","(", "[", "]", ")"]
+    COMMON_PUNCTUATION = [",", "*", ";", ".", ":", "(", "[", "]", ")"]
 
     def __init__(self):
         self.text = None
@@ -30,7 +31,7 @@ class BookAnalyzer:
         with open(src, mode='r', encoding='utf-8') as book_file:
             self.text = book_file.readlines()
 
-        #strip out empty lines
+        # strip out empty lines
         stripped_text = []
         for line in self.text:
             if line != "\n":
@@ -66,6 +67,7 @@ class BookAnalyzer:
                 if word == a_word:
                     continue
             self.unique_words.append(word)
+
 
 def main():
     book_analyzer = BookAnalyzer()
